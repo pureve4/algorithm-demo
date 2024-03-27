@@ -36,8 +36,8 @@ public class Demo3 {
         int p2 = mid + 1;
         int res = 0;
         while (p1 <= mid && p2 <= r) {
-            res += arr[p1] < arr[p2] ? (r - p2 + 1) * arr[p1] : 0;
-            //下面这个小于是关键！！！！！！[1,1,1,3,1,1,1,4]
+            res += arr[p1] < arr[p2] ? arr[p1] * (r - p2 + 1)  : 0;
+            //下面这个小于是关键！！！！！！[1,1,1,3, 1,1,1,4]   要用小于，小于等于就不行了,要左边数组先移动
             help[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
         }
         while (p1 <= mid) {
